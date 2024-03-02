@@ -1,8 +1,8 @@
-FROM node:20.11.0 as builder
+FROM node:18.17.1 as builder
 
 WORKDIR '/usr/src/app'
 
-COPY package.json .
+COPY package.json ./
 
 RUN npm install
 
