@@ -7,7 +7,7 @@ services:
 
 before_install:
   - echo "start Creating an image with dockerfile"
-  - docker build -t docker-github-actions -f Dockerfile.dev .
+  - docker build -t docker-github-actions -f Dockerfile .
 
 script:
   - docker run -e CI=true docker-github-actions npm run test -- --coverage
