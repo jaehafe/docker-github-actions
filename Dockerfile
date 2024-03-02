@@ -3,7 +3,7 @@ WORKDIR '/usr/src/app'
 COPY package.json .
 RUN yarn
 COPY ./ ./
-RUN yarn run build
+RUN npm run build
 
 FROM nginx
 EXPOSE 80
