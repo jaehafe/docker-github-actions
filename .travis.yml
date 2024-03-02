@@ -1,0 +1,16 @@
+sudo: required
+
+language: generic
+
+services:
+  - docker
+
+before_install:
+  - echo "start Creating an image with dockerfile"
+  - docker build -t docker-github-actions -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true docker-github-actions yarn run test -- --coverage
+
+after_success:
+  - echo "Test Success"
